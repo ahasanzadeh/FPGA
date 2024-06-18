@@ -15,7 +15,7 @@ entity P005_TimerProcedure is
     port( 
         -- INPUTs
         in_CLK1_50      : in std_logic; 
-        in_Switch1      : in std_logic; -- Avtive low reset 
+        in_PushButton1  : in std_logic; -- Avtive low reset 
 
         -- INOUTs
         in_Seconds      : inout integer; 
@@ -32,7 +32,7 @@ architecture rtl of P005_TimerProcedure is
     signal si_Ticks    : integer; 
 
     -- Procedure declaration goes HERE 
-    procedure p_IncrementWrap(signal   si_Counter   : inout integer; 
+    procedure p_IncrementWrap(signal si_Counter   : inout integer; 
                             constant ci_WrapValue : in    integer; 
                             constant cb_Enable    : in    boolean; 
                             variable vb_Wrapped   : out   boolean) is 
@@ -58,7 +58,7 @@ begin
     begin 
         if rising_edge(in_CLK1_50) then 
             -- Waiting for active low of reset signal
-            if in_Switch1 = '0' then 
+            if in_PushButton1 = '0' then 
                 si_Ticks   <= 0; 
                 in_Seconds <= 0; 
                 in_Minutes <= 0; 

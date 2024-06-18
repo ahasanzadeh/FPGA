@@ -72,12 +72,6 @@ set_location_assignment PIN_M8 -to in_CLK1_50
 set_instance_assignment -name IO_STANDARD "2.5 V" -to in_CLK1_50
 
 #============================================================
-# PUSH BUTTON
-#============================================================
-set_location_assignment PIN_H21 -to in_PushButton1
-set_instance_assignment -name IO_STANDARD "1.5 V SCHMITT TRIGGER" -to in_PushButton1
-
-#============================================================
 # LED
 #============================================================
 set_location_assignment PIN_C7 -to out_LED[0]

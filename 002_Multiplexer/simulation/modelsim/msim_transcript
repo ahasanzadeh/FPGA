@@ -1,0 +1,117 @@
+# do P002_Multiplexer_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/ah/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/ah/Documents/Workspace/FPGA/002_Multiplexer/P002_Multiplexer.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:49:59 on Jun 13,2024
+# vcom -reportprogress 300 -93 -work work /home/ah/Documents/Workspace/FPGA/002_Multiplexer/P002_Multiplexer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P002_Multiplexer
+# -- Compiling architecture rtl of P002_Multiplexer
+# End time: 18:49:59 on Jun 13,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work /home/ah/Documents/Workspace/FPGA/002_Multiplexer/simulation/modelsim/P002_Multiplexer_TB.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:50:05 on Jun 13,2024
+# vcom -reportprogress 300 -work work /home/ah/Documents/Workspace/FPGA/002_Multiplexer/simulation/modelsim/P002_Multiplexer_TB.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P002_Multiplexer_TB
+# -- Compiling architecture sim of P002_Multiplexer_TB
+# -- Loading entity P002_Multiplexer
+# End time: 18:50:05 on Jun 13,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/ah/Documents/Workspace/FPGA/002_Multiplexer/simulation/modelsim/P002_Multiplexer.vho
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:50:06 on Jun 13,2024
+# vcom -reportprogress 300 -work work /home/ah/Documents/Workspace/FPGA/002_Multiplexer/simulation/modelsim/P002_Multiplexer.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package fiftyfivenm_atom_pack
+# -- Loading package fiftyfivenm_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P002_Multiplexer
+# -- Compiling architecture structure of P002_Multiplexer
+# End time: 18:50:06 on Jun 13,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -i -l msim_transcript work.p002_multiplexer_tb
+# vsim -i -l msim_transcript work.p002_multiplexer_tb 
+# Start time: 18:50:19 on Jun 13,2024
+# Loading std.standard
+# ** Error: (vsim-13) Recompile work.p002_multiplexer_tb(sim) because work.p002_multiplexer has changed.
+# Error loading design
+# End time: 18:50:19 on Jun 13,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -work work /home/ah/Documents/Workspace/FPGA/002_Multiplexer/simulation/modelsim/P002_Multiplexer.vho /home/ah/Documents/Workspace/FPGA/002_Multiplexer/P002_Multiplexer.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:50:27 on Jun 13,2024
+# vcom -reportprogress 300 -work work /home/ah/Documents/Workspace/FPGA/002_Multiplexer/simulation/modelsim/P002_Multiplexer.vho /home/ah/Documents/Workspace/FPGA/002_Multiplexer/P002_Multiplexer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package fiftyfivenm_atom_pack
+# -- Loading package fiftyfivenm_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P002_Multiplexer
+# -- Compiling architecture structure of P002_Multiplexer
+# -- Compiling entity P002_Multiplexer
+# -- Compiling architecture rtl of P002_Multiplexer
+# End time: 18:50:27 on Jun 13,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work work /home/ah/Documents/Workspace/FPGA/002_Multiplexer/simulation/modelsim/P002_Multiplexer_TB.vht
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:50:27 on Jun 13,2024
+# vcom -reportprogress 300 -work work /home/ah/Documents/Workspace/FPGA/002_Multiplexer/simulation/modelsim/P002_Multiplexer_TB.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity P002_Multiplexer_TB
+# -- Compiling architecture sim of P002_Multiplexer_TB
+# -- Loading entity P002_Multiplexer
+# End time: 18:50:28 on Jun 13,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim work.p002_multiplexer_tb
+# vsim work.p002_multiplexer_tb 
+# Start time: 18:50:32 on Jun 13,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.p002_multiplexer_tb(sim)
+# Loading work.p002_multiplexer(rtl)
+add wave -position insertpoint  \
+sim:/p002_multiplexer_tb/in_sig1_MUX4to1 \
+sim:/p002_multiplexer_tb/in_sig2_MUX4to1 \
+sim:/p002_multiplexer_tb/in_sig3_MUX4to1 \
+sim:/p002_multiplexer_tb/in_sig4_MUX4to1 \
+sim:/p002_multiplexer_tb/in_sel_MUX4to1 \
+sim:/p002_multiplexer_tb/out_sig_MUX4to1 \
+sim:/p002_multiplexer_tb/dataWidth
+run
+run
+# End time: 18:51:39 on Jun 13,2024, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 0

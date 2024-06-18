@@ -51,6 +51,6 @@ begin
 		end if;
 	end process;
 
-	LEDout_LED(7 downto 0) <= sr_Display(7 downto 0);
+	out_LED(7 downto 0) <= sr_Display(7 downto 0);
 
 end rtl;

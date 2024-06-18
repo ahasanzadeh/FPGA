@@ -13,7 +13,7 @@ use IEEE.numeric_std.all;
 entity P002_Multiplexer is
 generic(
 	-- CONSTANTs
-	dataWidth : integer --:= 8
+	dataWidth : integer := 8
 );
 port(
 	-- INPUTs

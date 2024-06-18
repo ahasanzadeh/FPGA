@@ -22,7 +22,7 @@ architecture sim of P004_TimerIfElse_TB is
 
     -- INPUTs
     signal in_CLK1_50           : std_logic := '1'; 
-    signal in_Switch1           : std_logic := '0'; 
+    signal in_PushButton1       : std_logic := '0'; 
     signal in_Seconds           : integer; 
     signal in_Minutes           : integer; 
     signal in_Hours             : integer; 
@@ -38,7 +38,7 @@ begin
     generic map(ci_ClockFrequencyHz => ci_ClockFrequencyHz) 
     port map ( 
         in_CLK1_50      => in_CLK1_50, 
-        in_Switch1      => in_Switch1, 
+        in_PushButton1  => in_PushButton1, 
         in_Seconds      => in_Seconds, 
         in_Minutes      => in_Minutes, 
         in_Hours        => in_Hours,
@@ -54,7 +54,7 @@ begin
         wait until rising_edge(in_CLK1_50); 
 
         -- Take the DUT out of reset 
-        in_Switch1 <= '1'; 
+        in_PushButton1 <= '1'; 
 
         wait; 
     end process; 

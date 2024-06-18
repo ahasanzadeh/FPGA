@@ -11,15 +11,15 @@ use IEEE.numeric_std.all;
 --use ieee.std_logic_arith.all;
   
 entity P008_StateMachineFunction is
-    generic(ci_ClockFrequencyHz : integer := 50000000); -- 50MHz
+    generic(ci_ClockFrequencyHz : integer := 10000000); -- 10MHz
 
     port( 
 		  -- INPUTs
-        in_CLK1_50  : in std_logic; 
-        in_Switch1  : in std_logic; -- Avtive low reset 
+        in_CLK1_50      : in std_logic; 
+        in_Switch1      : in std_logic; -- Avtive low reset 
 
         -- OUTPUTs
-        out_LED     : out std_logic_vector(7 downto 0) := (others => '1')
+        out_LED         : out std_logic_vector(7 downto 0) := (others => '1')
         ); 
 end entity; 
     

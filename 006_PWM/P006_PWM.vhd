@@ -13,12 +13,12 @@ use ieee.std_logic_arith.all;
 entity P006_PWM is
 port(
 	-- INPUTS
-	in_CLK1_50 : in std_logic := '0';
+	in_CLK1_50		: in std_logic := '0';
 
-	KEY : in std_logic_vector(1 downto 0) := (others => '0');
+	in_PushButton1	: in std_logic := '0';
 	
 	-- OUTPUTs
-	out_LED : out std_logic_vector(7 downto 0) := (others => '0')
+	out_LED			: out std_logic_vector(7 downto 0) := (others => '0')
 	);
 end;
 
@@ -26,44 +26,44 @@ architecture rtl of P006_PWM is
 	-- Internal signal declaration goes HERE
 	
 	-- SIGNALs
-	signal reset_n  : std_logic;
+	signal s_ResetN		: std_logic;
 	
 	-- REGISTERs
-	signal counter : std_logic_vector(26 downto 0) register;
-	signal PWM_adj : std_logic_vector(5 downto 0) register;
-	signal PWM_width : std_logic_vector(6 downto 0) register;
-	signal display : std_logic_vector(7 downto 0) register;
+	signal sr_Counter		: std_logic_vector(26 downto 0) register;
+	signal sr_PWMAdj		: std_logic_vector(5 downto 0) register;
+	signal sr_PWMWidth	: std_logic_vector(6 downto 0) register;
+	signal sr_Display		: std_logic_vector(7 downto 0) register;
 begin
 	-- Process
 	-- Additional details:
 
-	reset_n <= KEY(0);
-	process(MAX10_CLK1_50)--, reset_n)
+	s_ResetN <= in_PushButton1;
+	process(in_CLK1_50)--, reset_n)
 	begin
-		if(rising_edge(MAX10_CLK1_50)) then
-			if(reset_n = '0') then
-				counter <= ( others => '0' );
-				display <= ( others => '1' );
+		if(rising_edge(in_CLK1_50)) then
+			if(s_ResetN = '0') then
+				sr_Counter <= ( others => '0' );
+				sr_Display <= ( others => '1' );
 			else
-				counter   <= counter + 1;
-				PWM_width(6 downto 0) <= ('0' & PWM_width(5 downto 0)) + ('0' & PWM_adj(5 downto 0));
-				if(counter(26) = '1') then
-					PWM_adj(5 downto 0) <= counter(25 downto 20);
+				sr_Counter   <= sr_Counter + 1;
+				sr_PWMWidth(6 downto 0) <= ('0' & sr_PWMWidth(5 downto 0)) + ('0' & sr_PWMAdj(5 downto 0));
+				if(sr_Counter(26) = '1') then
+					sr_PWMAdj(5 downto 0) <= sr_Counter(25 downto 20);
 				else
-					PWM_adj(5 downto 0) <= not counter(25 downto 20);
+					sr_PWMAdj(5 downto 0) <= not sr_Counter(25 downto 20);
 				end if;
-				display(0) <= not PWM_width(6);
-				display(1) <= not PWM_width(6);
-				display(2) <= not PWM_width(6);
-				display(3) <= not PWM_width(6);
-				display(4) <= PWM_width(6);
-				display(5) <= PWM_width(6);
-				display(6) <= PWM_width(6);
-				display(7) <= PWM_width(6);
+				sr_Display(0) <= not sr_PWMWidth(6);
+				sr_Display(1) <= not sr_PWMWidth(6);
+				sr_Display(2) <= not sr_PWMWidth(6);
+				sr_Display(3) <= not sr_PWMWidth(6);
+				sr_Display(4) <= sr_PWMWidth(6);
+				sr_Display(5) <= sr_PWMWidth(6);
+				sr_Display(6) <= sr_PWMWidth(6);
+				sr_Display(7) <= sr_PWMWidth(6);
 			end if;
 		end if;
 	end process;
 
-	LED(7 downto 0) <= display(7 downto 0);
+	out_LED(7 downto 0) <= sr_Display(7 downto 0);
 
 end rtl;

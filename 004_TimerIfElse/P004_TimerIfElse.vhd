@@ -14,16 +14,16 @@ entity P004_TimerIfElse is
     generic(ci_ClockFrequencyHz : integer := 50000000); -- 50MHz
     port( 
         -- INPUTs
-        in_CLK1_50  : in std_logic; 
-        in_Switch1  : in std_logic; -- Avtive low reset 
+        in_CLK1_50      : in std_logic; 
+        in_PushButton1  : in std_logic; -- Avtive low reset 
 
         -- INOUTs
-        in_Seconds     : inout integer; 
-        in_Minutes     : inout integer; 
-        in_Hours       : inout integer; 
+        in_Seconds      : inout integer; 
+        in_Minutes      : inout integer; 
+        in_Hours        : inout integer; 
 
         -- OUTPUTs
-        out_LED     : out std_logic_vector(7 downto 0) := (others => '1')
+        out_LED         : out std_logic_vector(7 downto 0) := (others => '1')
         );
 end entity; 
 
@@ -42,7 +42,7 @@ begin
     begin 
         if rising_edge(in_CLK1_50) then 
             -- Waiting for active low of reset signal
-            if in_Switch1   = '0' then 
+            if in_PushButton1   = '0' then 
                 s_Ticks     <= 0; 
                 in_Seconds  <= 0; 
                 in_Minutes  <= 0; 

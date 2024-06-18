@@ -5,8 +5,7 @@
 #**************************************************************
 # Create Clock
 #**************************************************************
-create_clock -period "50.0 MHz" [get_ports MAX10_CLK1_50]
-create_clock -period "50.0 MHz" [get_ports MAX10_CLK2_50]
+create_clock -period "50.0 MHz" [get_ports in_CLK1_50]
 
 #**************************************************************
 # Create Generated Clock

@@ -11,7 +11,7 @@ use IEEE.numeric_std.all;
 --use ieee.std_logic_arith.all;
   
 entity P007_StateMachineIfElse is
-    generic(ci_ClockFrequencyHz : integer := 50000000); -- 50MHz
+    generic(ci_ClockFrequencyHz : integer := 10000000); -- 10MHz
 
     port( 
 		  -- INPUTs

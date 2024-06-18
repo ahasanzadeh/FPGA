@@ -97,12 +97,6 @@ set_instance_assignment -name IO_STANDARD "1.2 V" -to out_LED[6]
 set_location_assignment PIN_C5 -to out_LED[7]
 set_instance_assignment -name IO_STANDARD "1.2 V" -to out_LED[7]
 
-#============================================================
-# SLIDING SWITCH
-#============================================================
-set_location_assignment PIN_J21 -to in_Switch1
-set_instance_assignment -name IO_STANDARD "1.5 V SCHMITT TRIGGER" -to in_Switch1
-
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
