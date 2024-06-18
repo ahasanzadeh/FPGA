@@ -1,6 +1,6 @@
 -- ============================================================================
 --	Developer: A.H.
---  State Machine 
+--  State Machine for a trafic light with if/else
 --  This is a design to be simulated by ModelSim, and implemented on MAX10 FPGA
 -- ============================================================================
 

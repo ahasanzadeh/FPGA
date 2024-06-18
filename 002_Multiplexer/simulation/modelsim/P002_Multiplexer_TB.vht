@@ -1,7 +1,7 @@
 -- ============================================================================
 --	Developer: A.H.
---  Multiplexer 
---  Testbench
+--  Test in simulation environment for a Multiplexer 
+--  Testbench for simulation of a Multiplexer
 -- ============================================================================
 
 library IEEE;

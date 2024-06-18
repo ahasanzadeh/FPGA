@@ -49,19 +49,19 @@ The following topics will be practised here on a MAX 10
 
 #### State Machine with If/Else
 
-* A statemachine for trafic light with if/else operands is simulated via ModelSim and implemented on MAX 10 FPGA board. Follow corresponding oder for "LED On/Off" above. 
+* A state machine for a trafic light with if/else operands is simulated via ModelSim and implemented on MAX 10 FPGA board. Follow corresponding oder for "LED On/Off" above. 
 
 #### State Machine with Function
 
-* A statemachine for trafic light with function operands is simulated via ModelSim and implemented on MAX 10 FPGA board. Follow corresponding oder for "LED On/Off" above. 
+* A state machine for a trafic light with function operands is simulated via ModelSim and implemented on MAX 10 FPGA board. Follow corresponding oder for "LED On/Off" above. 
 
 #### State Machine with Impure Function
 
-* A statemachine for trafic light with impure function operands is simulated via ModelSim and implemented on MAX 10 FPGA board. Follow corresponding oder for "LED On/Off" above. 
+* A state machine for a trafic light with impure function operands is simulated via ModelSim and implemented on MAX 10 FPGA board. Follow corresponding oder for "LED On/Off" above. 
 
 #### State Machine with Procedure
 
-* A statemachine for trafic light with procedure operands is simulated via ModelSim and implemented on MAX 10 FPGA board. Follow corresponding oder for "LED On/Off" above. 
+* A state machine for a trafic light with procedure operands is simulated via ModelSim and implemented on MAX 10 FPGA board. Follow corresponding oder for "LED On/Off" above. 
 
 ## Help
 

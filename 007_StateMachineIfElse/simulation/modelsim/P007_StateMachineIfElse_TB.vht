@@ -1,7 +1,7 @@
 -- ============================================================================
 --	Developer: A.H.
---  State Machine 
---  Testbench
+--  Test in simulation environment for a state machine for a trafic light with if/else 
+--  Testbench for simulation of a state machine for a trafic light with if/else 
 -- ============================================================================
 
 library IEEE;

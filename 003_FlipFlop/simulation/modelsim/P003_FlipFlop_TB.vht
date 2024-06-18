@@ -1,7 +1,7 @@
 -- ============================================================================
 --	Developer: A.H.
---  Clocked precess: Flip-Flop with synchronized reset  
---  Testbench
+--  Test in simulation environment for a clocked precess: Flip-Flop with synchronized reset 
+--  Testbench for simulation of a clocked precess: Flip-Flop with synchronized reset
 -- ============================================================================
 
 library IEEE;

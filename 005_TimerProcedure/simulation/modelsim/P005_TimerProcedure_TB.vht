@@ -1,7 +1,7 @@
 -- ============================================================================
 --	Developer: A.H.
---  Timer: Counts seconds, minutes, and hours 
---  --  Testbench
+--  Test in simulation environment for a timer with procedure 
+--  Testbench for simulation of a timer with procedure 
 -- ============================================================================
 
 library IEEE;

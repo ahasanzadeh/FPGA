@@ -1,6 +1,6 @@
 -- ============================================================================
 --	Developer: A.H.
---  State Machine 
+--  State Machine for a trafic light with impure function
 --  This is a design to be simulated by ModelSim, and implemented on MAX10 FPGA
 -- ============================================================================
 

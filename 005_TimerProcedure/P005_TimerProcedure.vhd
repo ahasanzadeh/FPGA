@@ -1,6 +1,6 @@
 -- ============================================================================
 --	Developer: A.H.
---  Timer: Counts seconds, minutes, and hours 
+--  Timer with procedure: Counts seconds, minutes, and hours 
 --  This is a design to be simulated by ModelSim, and implemented on MAX10 FPGA
 -- ============================================================================
 

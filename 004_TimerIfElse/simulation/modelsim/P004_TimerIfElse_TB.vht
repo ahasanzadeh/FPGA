@@ -1,7 +1,7 @@
 -- ============================================================================
 --	Developer: A.H.
---  Timer: Counts seconds, minutes, and hours 
---  --  Testbench
+--  Test in simulation environment a timer with if/else: Counts seconds, minutes, and hours 
+--  Testbench for simulation of a timer: Counts seconds, minutes, and hours
 -- ============================================================================
 
 library IEEE;

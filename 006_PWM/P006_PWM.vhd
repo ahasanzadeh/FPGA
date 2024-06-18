@@ -1,6 +1,6 @@
 -- ============================================================================
 --	Developer: A.H.
---  LED blinking 
+--  PWM (a VHDL translation of LED breathe already exist Verilog example of this evaluation board) 
 --  This is a design to be implemented on MAX10 FPGA 
 -- ============================================================================
 
