@@ -4,8 +4,18 @@ The purpose of this repository is to start from practicing FPGA VHDL programming
 
 ## Description
 
-The following topics will be practised here on a MAX 10
-* 
+The following topics will be practised here on a MAX 10 FPGA
+* LED On/Off Manually
+* LED Blinking
+* Multiplexer
+* Flip Flop
+* Timer with If/Else
+* Timer with Procedure
+* PWM
+* State Machine with If/Else
+* State Machine with Function
+* State Machine with Impure Function
+* State Machine with Procedure
 
 ## Getting Started
 
@@ -19,7 +29,7 @@ The following topics will be practised here on a MAX 10
 
 ### Executing program
 
-#### LED On/Off
+#### LED On/Off Manually
 
 * 8 LEDs on MAX 10 FPGA board turn on/off via hitting push button 1 (no clock involved). Each folder comes with Quartus II project file (.qpf), Quartus II setting file (.qsf), top-level design file (.vhd), synopsis design constraints file (.sdc), and ModelSim testbench file (.vht). Some project does not have ModelSim testbench file (.vht). In Quartus II, first each project needs to be compiled (Ctrl + L), then either programmed into FPGA using Tools-> Programmer (Alt + T + P) by selecting right JTAG programmer (blaster) or simulated via ModelSiM using Tools -> Run Simulation Tools -> RTL Simulation (Alt + T + R). No ModelSim simulation for this example.
 
