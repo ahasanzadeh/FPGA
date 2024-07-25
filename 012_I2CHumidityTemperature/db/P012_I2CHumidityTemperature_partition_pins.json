@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "RH_TEMP_I2C_SCL",
+					"strict" : false
+				},
+				{
+					"name" : "RH_TEMP_I2C_SDA",
+					"strict" : false
+				},
+				{
+					"name" : "in_PushButton[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RH_TEMP_DRDY_n",
+					"strict" : false
+				},
+				{
+					"name" : "in_CLK1_50",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
