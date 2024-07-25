@@ -5,68 +5,68 @@ use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
 entity CAP_CTRL is
--- Main-ST 
---Pointer NUM
-generic(
-    constant SLAVE_ADDR             : integer := 110;--x"6E";
---WRITE
-    constant P_LATCHED_BUTTON_STAT  : integer := 172;--x"AC";  
-    constant P_PROX_EN              : integer := 38;--x"26";
-    constant P_PROX_TOUCH_TH0       : integer := 42;--x"2A";
-    constant P_PROX_TOUCH_TH1       : integer := 44;--x"2C";
-    constant P_LATCHED_PROX_STAT    : integer := 175;--x"AF";
-    constant P_PROX_CFG             : integer := 39;--x"27";
-    constant P_BASE_THRESHOLD0      : integer := 12;--x"0C";
-    constant P_BASE_THRESHOLD1      : integer := 13;--x"0D";
-    constant P_PROX_POSITIVE_TH0    : integer := 53;--x"35";
---READ
-    constant P_DEVICE_ID            : integer := 144;--x"90";
-    constant P_FAMILY_ID            : integer := 143;--x"8F";
-    constant P_DEVICE_REV           : integer := 146;--x"92";
-    constant P_BUTTON_STAT          : integer := 170;--x"AA"; 
-    constant P_PROX_STAT            : integer := 174--x"AE"
+    -- Main-ST 
+    --Pointer NUM
+    generic(
+        constant SLAVE_ADDR             : integer := 110;--x"6E";
+        --WRITE
+        constant P_LATCHED_BUTTON_STAT  : integer := 172;--x"AC";  
+        constant P_PROX_EN              : integer := 38;--x"26";
+        constant P_PROX_TOUCH_TH0       : integer := 42;--x"2A";
+        constant P_PROX_TOUCH_TH1       : integer := 44;--x"2C";
+        constant P_LATCHED_PROX_STAT    : integer := 175;--x"AF";
+        constant P_PROX_CFG             : integer := 39;--x"27";
+        constant P_BASE_THRESHOLD0      : integer := 12;--x"0C";
+        constant P_BASE_THRESHOLD1      : integer := 13;--x"0D";
+        constant P_PROX_POSITIVE_TH0    : integer := 53;--x"35";
+        --READ
+        constant P_DEVICE_ID            : integer := 144;--x"90";
+        constant P_FAMILY_ID            : integer := 143;--x"8F";
+        constant P_DEVICE_REV           : integer := 146;--x"92";
+        constant P_BUTTON_STAT          : integer := 170;--x"AA"; 
+        constant P_PROX_STAT            : integer := 174--x"AE"
     );
 
-port(
-	RESET_N		   	    : in std_logic;
-	CLK_50	   	        : in std_logic;
-    CAP_SENSE_I2C_SCL	: out std_logic;
-	CAP_SENSE_I2C_SDA	: inout std_logic;
+    port(
+        RESET_N		   	    : in std_logic;
+        CLK_50	   	        : in std_logic;
+        CAP_SENSE_I2C_SCL	: out std_logic;
+        CAP_SENSE_I2C_SDA	: inout std_logic;
 
-    --SET IN
-    SW_ACTIVE_POLARITY  : in std_logic;
-	SW_PROX_EN          : in std_logic_vector(15 downto 0); 
-	SW_PROX_TOUCH_TH0   : in std_logic_vector(15 downto 0); 
-	SW_PROX_TOUCH_TH1   : in std_logic_vector(15 downto 0); 
+        --SET IN
+        SW_ACTIVE_POLARITY  : in std_logic;
+        SW_PROX_EN          : in std_logic_vector(15 downto 0); 
+        SW_PROX_TOUCH_TH0   : in std_logic_vector(15 downto 0); 
+        SW_PROX_TOUCH_TH1   : in std_logic_vector(15 downto 0); 
 
-    --Test or ST-BUS 
-    Device_ID           : out std_logic_vector(15 downto 0) register;
-    Family_ID           : out std_logic_vector(15 downto 0) register;
-    Device_REV          : out std_logic_vector(15 downto 0) register;
-    Button_STAT         : inout std_logic_vector(15 downto 0) register;
-    Prox_STAT           : out std_logic_vector(15 downto 0) register;
-    Prox_EN             : out std_logic_vector(15 downto 0) register;
-    PROX_TOUCH_TH0      : out std_logic_vector(15 downto 0) register;
-    PROX_TOUCH_TH1      : out std_logic_vector(15 downto 0) register;
-    BASE_THRESHOLD0	    : out std_logic_vector(15 downto 0) register;
-    BASE_THRESHOLD1     : out std_logic_vector(15 downto 0) register;
-    F_STAT              : out std_logic_vector(15 downto 0);
-    PROX_POSITIVE_TH0   : out std_logic_vector(15 downto 0) register;
+        --Test or ST-BUS 
+        Device_ID           : out std_logic_vector(15 downto 0) register;
+        Family_ID           : out std_logic_vector(15 downto 0) register;
+        Device_REV          : out std_logic_vector(15 downto 0) register;
+        Button_STAT         : inout std_logic_vector(15 downto 0) register;
+        Prox_STAT           : out std_logic_vector(15 downto 0) register;
+        Prox_EN             : out std_logic_vector(15 downto 0) register;
+        PROX_TOUCH_TH0      : out std_logic_vector(15 downto 0) register;
+        PROX_TOUCH_TH1      : out std_logic_vector(15 downto 0) register;
+        BASE_THRESHOLD0	    : out std_logic_vector(15 downto 0) register;
+        BASE_THRESHOLD1     : out std_logic_vector(15 downto 0) register;
+        F_STAT              : out std_logic_vector(15 downto 0);
+        PROX_POSITIVE_TH0   : out std_logic_vector(15 downto 0) register;
 
-    --test
-    CLK_400K            : inout std_logic register;
-    I2C_LO0P            : inout std_logic register;
-    ST                  : inout std_logic_vector(7 downto 0) register;
-    CNT                 : inout std_logic_vector(7 downto 0) register;
-    W_WORD_END          : inout std_logic;
-    W_WORD_GO           : inout std_logic register;
+        --test
+        CLK_400K            : inout std_logic register;
+        I2C_LO0P            : inout std_logic register;
+        ST                  : inout std_logic_vector(7 downto 0) register;
+        CNT                 : inout std_logic_vector(7 downto 0) register;
+        W_WORD_END          : inout std_logic;
+        W_WORD_GO           : inout std_logic register;
 
-    WORD_ST             : inout std_logic_vector(7 downto 0);
-    WORD_CNT            : inout std_logic_vector(7 downto 0);
-    WORD_BYTE           : inout std_logic_vector(7 downto 0);
-    R_DATA              : inout std_logic_vector(15 downto 0);
-    SDAI_W              : inout std_logic
-);
+        WORD_ST             : inout std_logic_vector(7 downto 0);
+        WORD_CNT            : inout std_logic_vector(7 downto 0);
+        WORD_BYTE           : inout std_logic_vector(7 downto 0);
+        R_DATA              : inout std_logic_vector(15 downto 0);
+        SDAI_W              : inout std_logic
+    );
 end;
 
 architecture rtl of CAP_CTRL is

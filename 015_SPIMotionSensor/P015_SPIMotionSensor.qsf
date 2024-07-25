@@ -19,14 +19,14 @@
 #
 # Quartus Prime
 # Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-# Date created = 09:51:54  July 10, 2024
+# Date created = 10:44:58  July 12, 2024
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		P011_I2C_assignment_defaults.qdf
+#		P015_SPIMotionSensor_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C6GES
-set_global_assignment -name TOP_LEVEL_ENTITY P011_I2C
+set_global_assignment -name TOP_LEVEL_ENTITY P015_SPIMotionSensor
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:51:54  JULY 10, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -66,13 +66,20 @@ set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
 #============================================================
 # CLOCK
 #============================================================
-set_location_assignment PIN_M9 -to ADC_CLK_10
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ADC_CLK_10
+set_location_assignment PIN_M9 -to in_CLK_ADC_10
+set_instance_assignment -name IO_STANDARD "2.5 V" -to in_CLK_ADC_10
 set_location_assignment PIN_M8 -to in_CLK1_50
 set_instance_assignment -name IO_STANDARD "2.5 V" -to in_CLK1_50
 set_location_assignment PIN_P11 -to in_CLK2_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in_CLK2_50
 
+#============================================================
+# PUSH BUTTON
+#============================================================
+set_location_assignment PIN_H21 -to in_PushButton[0]
+set_instance_assignment -name IO_STANDARD "1.5 V SCHMITT TRIGGER" -to in_PushButton[0]
+set_location_assignment PIN_H22 -to in_PushButton[1]
+set_instance_assignment -name IO_STANDARD "1.5 V SCHMITT TRIGGER" -to in_PushButton[1]
 
 #============================================================
 # LED
@@ -95,12 +102,28 @@ set_location_assignment PIN_C5 -to out_LED[7]
 set_instance_assignment -name IO_STANDARD "1.2 V" -to out_LED[7]
 
 #============================================================
-# CapSense Button
+# G-Sensor
 #============================================================
-set_location_assignment PIN_AB2 -to CAP_SENSE_I2C_SCL
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CAP_SENSE_I2C_SCL
-set_location_assignment PIN_AB3 -to CAP_SENSE_I2C_SDA
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CAP_SENSE_I2C_SDA
+set_location_assignment PIN_E9 -to G_SENSOR_CS_n
+set_instance_assignment -name IO_STANDARD "1.2 V" -to G_SENSOR_CS_n
+set_location_assignment PIN_B5 -to G_SENSOR_SCLK
+set_instance_assignment -name IO_STANDARD "1.2 V" -to G_SENSOR_SCLK
+set_location_assignment PIN_E8 -to G_SENSOR_INT1
+set_instance_assignment -name IO_STANDARD "1.2 V" -to G_SENSOR_INT1
+set_location_assignment PIN_D5 -to G_SENSOR_SDO
+set_instance_assignment -name IO_STANDARD "1.2 V" -to G_SENSOR_SDO
+set_location_assignment PIN_D7 -to G_SENSOR_INT2
+set_instance_assignment -name IO_STANDARD "1.2 V" -to G_SENSOR_INT2
+set_location_assignment PIN_C6 -to G_SENSOR_SDI
+set_instance_assignment -name IO_STANDARD "1.2 V" -to G_SENSOR_SDI
+
+#============================================================
+# SLIDING SWITCH
+#============================================================
+set_location_assignment PIN_J21 -to in_SlidingSwitch[0]
+set_instance_assignment -name IO_STANDARD "1.5 V SCHMITT TRIGGER" -to in_SlidingSwitch[0]
+set_location_assignment PIN_J22 -to in_SlidingSwitch[1]
+set_instance_assignment -name IO_STANDARD "1.5 V SCHMITT TRIGGER" -to in_SlidingSwitch[1]
 
 #============================================================
 # End of pin assignments by Terasic System Builder
@@ -123,12 +146,12 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name STATE_MACHINE_PROCESSING "USER-ENCODED"
-set_global_assignment -name VHDL_FILE Core/I2C_WRITE_WORD.vhd
-set_global_assignment -name VHDL_FILE Core/I2C_WRITE_POINTER.vhd
-set_global_assignment -name VHDL_FILE Core/CLOCKMEM.vhd
-set_global_assignment -name VHDL_FILE Core/I2C_READ.vhd
-set_global_assignment -name VHDL_FILE Core/CAPSENSE_BUTTON.vhd
-set_global_assignment -name VHDL_FILE Core/CAP_CTRL.vhd
-set_global_assignment -name VHDL_FILE P011_I2C.vhd
-set_global_assignment -name SDC_FILE P011_I2C.SDC
+set_global_assignment -name ENABLE_SIGNALTAP OFF
+set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+
+set_global_assignment -name VERILOG_FILE Core/led_driver.v
+set_global_assignment -name VHDL_FILE Core/SPI_CTL.vhd
+set_global_assignment -name VHDL_FILE P015_SPIMotionSensor.vhd
+set_global_assignment -name SDC_FILE P015_SPIMotionSensor.SDC
+
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

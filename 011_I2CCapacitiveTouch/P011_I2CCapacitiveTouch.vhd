@@ -1,7 +1,7 @@
 
 -- ============================================================================
---	 Developer: A.H.
---  I2C (MAX 10 via an I2C stack API communicate (read/write) with an IC to read 2 capacitive touch switches) 
+--	Developer: A.H.
+--  I2C (MAX 10 via an I2C stack API communicates (reads/writes) with CY8CMBR3102 IC to read 2 capacitive touch switches) 
 --  This is a design to be implemented on MAX10 FPGA 
 -- ============================================================================
 
@@ -11,7 +11,7 @@ use IEEE.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
-entity P011_I2C is
+entity P011_I2CCapacitiveTouch is
 port(
 	-- CLOCK 
 	in_CLK1_50		: in std_logic;
@@ -26,7 +26,7 @@ port(
 	);
 end;
 
-architecture rtl of P011_I2C is
+architecture rtl of P011_I2CCapacitiveTouch is
 	-- Internal signal declaration goes HERE
 	
 	-- SIGNALs
