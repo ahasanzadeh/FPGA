@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at RH_TEMP.v(65): always construct contains both blocking and non-blocking assignments File: /home/ah/Documents/Workspace/FPGA/012_I2CHumidityTemperature/Core/RH_TEMP.v Line: 65
