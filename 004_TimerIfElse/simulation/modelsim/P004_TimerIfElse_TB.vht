@@ -1,5 +1,5 @@
 -- ============================================================================
---	Developer: A.H.
+--	Developer: M. Z.
 --  Test in simulation environment a timer with if/else: Counts seconds, minutes, and hours 
 --  Testbench for simulation of a timer: Counts seconds, minutes, and hours
 -- ============================================================================

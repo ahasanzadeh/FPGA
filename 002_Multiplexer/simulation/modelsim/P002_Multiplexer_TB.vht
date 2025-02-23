@@ -1,5 +1,5 @@
 -- ============================================================================
---	Developer: A.H.
+--	Developer: M. Z.
 --  Test in simulation environment for a Multiplexer 
 --  Testbench for simulation of a Multiplexer
 -- ============================================================================

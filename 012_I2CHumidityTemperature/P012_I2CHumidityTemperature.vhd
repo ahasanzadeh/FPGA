@@ -1,6 +1,6 @@
 
 -- ============================================================================
---	Developer: A.H.
+--	Developer: M. Z.
 --  I2C (MAX 10 via an I2C stack API communicates (reads/writes) with HDC1000YPAR IC to read humidity and temperature) 
 --  This is a design to be implemented on MAX10 FPGA 
 -- ============================================================================

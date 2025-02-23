@@ -1,5 +1,5 @@
 -- ============================================================================
---	Developer: A.H.
+--	Developer: M. Z.
 --  Clocked precess: Flip-Flop with synchronized reset 
 --  This is a design to be simulated by ModelSim, and implemented on MAX10 FPGA
 -- ============================================================================

@@ -1,6 +1,6 @@
 
 -- ============================================================================
---	Developer: A.H.
+--	Developer: M. Z.
 --  SPI (MAX 10 via an SPI stack API communicates (reads/writes) with CY8CMBR3102 IC to read 2 capacitive touch switches) 
 --  This is a design to be implemented on MAX10 FPGA 
 -- ============================================================================

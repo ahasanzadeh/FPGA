@@ -1,5 +1,5 @@
 -- ============================================================================
---	Developer: A.H.
+--	Developer: M. Z.
 --  State Machine for a trafic light with function
 --  This is a design to be simulated by ModelSim, and implemented on MAX10 FPGA
 -- ============================================================================

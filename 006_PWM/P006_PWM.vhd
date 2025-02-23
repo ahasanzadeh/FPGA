@@ -1,5 +1,5 @@
 -- ============================================================================
---	Developer: A.H.
+--	Developer: M. Z.
 --  PWM (a VHDL translation of LED breathe already exist Verilog example of this evaluation board) 
 --  This is a design to be implemented on MAX10 FPGA 
 -- ============================================================================

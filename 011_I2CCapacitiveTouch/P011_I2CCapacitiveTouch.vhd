@@ -1,6 +1,6 @@
 
 -- ============================================================================
---	Developer: A.H.
+--	Developer: M. Z.
 --  I2C (MAX 10 via an I2C stack API communicates (reads/writes) with CY8CMBR3102 IC to read 2 capacitive touch switches) 
 --  This is a design to be implemented on MAX10 FPGA 
 -- ============================================================================

@@ -1,5 +1,5 @@
 -- ============================================================================
---	Developer: A.H.
+--	Developer: M. Z.
 --  Test in simulation environment for a state machine for a trafic light with impure function
 --  Testbench for simulation of a state machine for a trafic light with impure function
 -- ============================================================================
